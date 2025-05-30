@@ -14,12 +14,14 @@ A Python-based tool for scraping Twitter timelines and extracting tweet data eff
 
 - Python 3.8 or higher
 - GROQ API key
+- Google Chrome browser
+- ChromeDriver (matching your Chrome version)
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/VinVirtual/Twitter-Timeline-Scrapper.git
+git clone https://github.com/VinVirtual/Twitter-Timeline-Scrapper-FastAPI.git
 cd Twitter-Timeline-Scrapper
 ```
 
@@ -37,10 +39,41 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Create a `.env` file in the project root and add your GROQ API key:
+4. Create a `.env` file in the project root with the following configuration:
 ```
-GROQ_API_KEY=your_groq_api_key
+# API Keys
+GROQ_API_KEY=your_groq_api_key_here
+
+# Chrome Configuration
+CHROME_USER_DATA_DIR=C:/Users/YourUsername/AppData/Local/Google/Chrome/User Data
+CHROME_PROFILE_NAME=Default
+CHROME_BINARY_LOCATION=C:/Program Files/Google/Chrome/Application/chrome.exe
+CHROMEDRIVER_PATH=path/to/your/chromedriver.exe
 ```
+
+### Environment Variables Explanation
+
+- `GROQ_API_KEY`: Your Groq API key for AI-powered tweet summarization
+- `CHROME_USER_DATA_DIR`: Path to your Chrome user data directory
+- `CHROME_PROFILE_NAME`: Chrome profile to use (usually "Default")
+- `CHROME_BINARY_LOCATION`: Path to your Chrome browser executable
+- `CHROMEDRIVER_PATH`: Path to your ChromeDriver executable
+
+### Finding Chrome Configuration Paths
+
+1. **Chrome User Data Directory**:
+   - Windows: `C:\Users\YourUsername\AppData\Local\Google\Chrome\User Data`
+   - MacOS: `~/Library/Application Support/Google/Chrome`
+   - Linux: `~/.config/google-chrome`
+
+2. **Chrome Binary Location**:
+   - Windows: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+   - MacOS: `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
+   - Linux: `/usr/bin/google-chrome`
+
+3. **ChromeDriver**:
+   - Download the appropriate version from [ChromeDriver website](https://sites.google.com/chromium.org/driver/)
+   - Place it in a known location and update `CHROMEDRIVER_PATH` accordingly
 
 ## Usage
 

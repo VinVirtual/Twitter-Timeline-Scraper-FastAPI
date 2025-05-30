@@ -12,8 +12,8 @@ import logging
 #logging.basicConfig(level=logging.DEBUG)
 #logger = logging.getLogger(__name__)
 
-
 load_dotenv()
+
 def scrape_and_summarize():
     # Load API key
     api_key = os.getenv("GROQ_API_KEY")
@@ -22,18 +22,21 @@ def scrape_and_summarize():
 
     client = Groq(api_key=api_key)
 
-   
     try:
-        
-         # Chrome options and setup
+        # Chrome options and setup
         chrome_options = Options()
-        user_data_dir = "C:/Users/Ai Dev/AppData/Local/Google/Chrome/User Data"
-        profile_name = "Default"
+        user_data_dir = os.getenv("CHROME_USER_DATA_DIR")
+        profile_name = os.getenv("CHROME_PROFILE_NAME")
+        chrome_binary = os.getenv("CHROME_BINARY_LOCATION")
+        chromedriver_path = os.getenv("CHROMEDRIVER_PATH")
+
+        if not all([user_data_dir, profile_name, chrome_binary, chromedriver_path]):
+            return {"error": "Missing required Chrome configuration in environment variables"}
+
         chrome_options.add_argument(f"user-data-dir={user_data_dir}")
         chrome_options.add_argument(f"profile-directory={profile_name}")
         chrome_options.add_argument("--no-sandbox")
-        chrome_options.binary_location = "C:/Program Files/Google/Chrome/Application/chrome.exe"
-        chromedriver_path ="C:/Users/AI Dev/Desktop/Twitter Timeline/Fast Api/chromedriver.exe"
+        chrome_options.binary_location = chrome_binary
         service = Service(executable_path=chromedriver_path)
         driver = webdriver.Chrome(service=service, options=chrome_options)
         # WebDriver setup and code here
