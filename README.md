@@ -19,7 +19,7 @@ A Python-based tool for scraping Twitter timelines and extracting tweet data eff
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/VinVirtual/Twitter-Timeline-Scrapper.git
+git clone https://github.com/VinVirtual/Twitter-Timeline-Scrapper-FastAPI.git
 cd Twitter-Timeline-Scrapper
 ```
 
