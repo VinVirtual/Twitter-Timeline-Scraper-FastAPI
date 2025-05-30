@@ -2,6 +2,36 @@
 
 A Python-based tool for scraping Twitter timelines and extracting tweet data efficiently.
 
+## ⚠️ Security Warnings
+
+Before using this tool, please be aware of the following security considerations:
+
+1. **API Key Security**:
+   - Never commit your `.env` file to version control
+   - Keep your GROQ API key secure and rotate it if compromised
+   - Monitor your API usage for any unauthorized access
+
+2. **Chrome Profile Security**:
+   - The tool uses your Chrome profile to access Twitter
+   - This means it has access to your Twitter session
+   - Use a separate Chrome profile for scraping to limit access to your main account
+   - Never share your Chrome user data directory
+
+3. **Twitter Terms of Service**:
+   - This tool is for educational purposes only
+   - Ensure you comply with Twitter's Terms of Service
+   - Do not use this tool for:
+     - Mass scraping
+     - Automated posting
+     - Data collection for commercial purposes without permission
+     - Any activity that could harm Twitter's services
+
+4. **Best Practices**:
+   - Use a dedicated Twitter account for testing
+   - Regularly clear your Chrome profile data
+   - Monitor your Twitter account for any suspicious activity
+   - Keep your ChromeDriver and Chrome browser updated
+
 ## Features
 
 - Scrape tweets from user timelines
@@ -97,4 +127,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Disclaimer
 
-This tool is for educational purposes only. Please ensure you comply with Twitter's Terms of Service and API usage guidelines when using this scraper. 
+This tool is for educational purposes only. Please ensure you comply with Twitter's Terms of Service and API usage guidelines when using this scraper. The authors are not responsible for any misuse of this tool or any consequences resulting from such misuse. 
